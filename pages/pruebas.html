@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curious QA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <img src="../assets/images/curiousqa-logo.png" width="200" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                            </li>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Categorías
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="pruebas.html">Casos de prueba</a></li>
+                                    <li><a class="dropdown-item" href="plan.html">Plan de pruebas</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!--TEXTO INICIAL-->
+    <div class="bg-light">
+        <div class="container">
+            <div class="row h-100 align-items-center py-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Ejecución de pruebas + Conclusiones y sugerencias</h1>
+                    <p class="lead text-muted mb-0"> Microservicios API ARTIST
+                    </p>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block"><img src="../assets/images/bug-img.png" alt=""
+                        class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEXTO PRINCIPAL -->
+    <div class="container py-5">
+        <h2 class="h3 font-weight-bold">Ejecución plan de pruebas API REST (Semana 16 Octubre)</h2>
+        <div class="row">
+            <div class="col-lg-10 mb-4">
+                <p class="font-italic text-muted">
+                    
+
+                    Se empleó el plan de pruebas propuesto para la aplicación “API REST ARTIST”. Para ello, se
+                    utilizaron pruebas manuales con el software “Postman” para observar el funcionamiento de los
+                    Endpoint de cada entidad. Para la redacción y registro de resultados de casos de prueba, se utilizó
+                    el software Test Link.
+                    <br/><br/>
+                    Se ejecutaron pruebas de tipo funcional, debido a que se necesitaba conocer el comportamiento de la
+                    aplicación frente a diversas modificaciones en sus datos de entrada, funcionamiento general de los
+                    métodos HTTP y algunos aspectos de seguridad como el acceso de datos.
+                    <br/><br/>
+                    <b>Conclusiones:</b>
+                    <br/><br/>
+                    El plan de prueba constó de un total de 12 casos de prueba, en dónde se evaluó el funcionamiento de
+                    los módulos POST, GET ID, GET ALL, PUT, DELETE y sus posibles variaciones.
+                    <br/><br/>
+                    Los resultados obtenidos denotan un total de 8 casos pasados y 4 fallidos.
+                    <br/><br/>
+                    Como observación general, las funciones básicas que debería tener una API REST se cumple en la
+                    mayoría de los casos, puesto que la conexión entre el proyecto realizado en Java Spring Boot, la
+                    base de datos H2 y los endpoints en Postman es estable y no existen errores o interrupciones en la
+                    comunicación.
+                    <br/><br/>
+                    No fue posible obtener una conexión a la funcionalidad del método “PUT”, debido a esto, no se ahondó
+                    en más pruebas para esta solicitud hasta que el desarrollador depure esta función.
+                    <br/><br/>
+                    El resto de endpoints proporcionados por el desarrollador se ejecutan adecuadamente, los path
+                    especificados corresponden para cada método del CRUD.
+                    <br/><br/>
+                    Al momento de modificar los datos de entrada para los atributos de las entidades artista y álbum, se
+                    observa que estas guardan los datos en todas las condiciones probadas:
+                    <ul>
+                        <li>Tipo de dato erróneo al esperado</li>
+                        <li>Longitud excesiva de caracteres</li>
+                        <li>Formato inadecuado para el campo</li>
+                        <li>Campos nulos o vacíos</li>
+                        <li>Caracteres permitidos</li>
+                    </ul>
+                    
+
+                    Lo que nos lleva a concluir que no existe una validación de datos desde los atributos, lo cual es
+                    importante para asegurarse de que los datos ingresados en el backend cumplan con los requisitos
+                    establecidos antes de ser procesados o almacenados en la base de datos.
+                    <br/><br/>
+                    No existe seguridad para la integridad de los datos, por ende el acceso para la manipulación de
+                    datos desde la base de datos es libre para quien sea que tenga el proyecto.
+                    <br/><br/>
+                    No se estimó necesario realizar pruebas no funcionales como carga y rendimiento, debido al estado
+                    prematuro en que se encuentra la aplicación.
+                    <br/><br/>
+                   <b>Sugerencias:</b>
+                    <br/><br/>
+
+                    <ul>
+                        <li>Realizar depuración del código para aquellas pruebas que fueron falladas.</li>
+                        <li>Se recomienda validar los datos desde el backend para que los campos sean atingentes al contexto,
+                    por ejemplo, si se desea ingresar el número de álbumes, que el campo sólo permita la entrega de
+                    datos numéricos.</li>
+                        <li>Se recomienda mejorar el formato del archivo README, especificando de forma más detallada los pasos
+                    a seguir para ejecutar el proyecto.</li>
+                        <li>Como aspecto a mejorar a futuro, considerar la implementación de seguridad para el acceso a la base
+                    de datos, como lo son la autenticación y autorización.</li>
+                    </ul>
+                    <br/><br/>
+
+                </p>
+                <p>A continuación podrás descargar el archivo exportado desde TestLink con los casos de prueba y sus resultados:</p>
+                <button type="button" class="btn btn-warning"><a
+                    href="../assets/documents/Ejecución de plan de pruebas API REST.pdf" download>Descargar</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="text-center text-white">
+        <div class="container p-4 pb-0">
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright:
+            <a class="text-white" href="https://github.com/framciscat">Framciscat</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
