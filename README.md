@@ -1,4 +1,4 @@
-# PRUEBA QA - 02 3IT
+# PRUEBA QA - 03 - 3IT Eureka Teams
 ## Fecha de entrega: 20/10/2023
 
 ### Trainee: Francisca Madariaga
